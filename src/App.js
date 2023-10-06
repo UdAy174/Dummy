@@ -1,12 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 
+
 function App() {
+  const[text,setText] = useState('');
+
+  function changeHandler(event){
+    setText(event.target.value);
+    console.log(text)
+  }
   return (
-    <main class="flex justify-center gap-4 flex-col min-h-screen">
-      <h1 class="text-3xl text-center font-bold underline">React & Tailwind CSS Starter Pack</h1>
-      <p class="text-center text-xl">This is a starter pack for React & Tailwind CSS projects.</p>
-      <img src="https://bit.ly/3wsmzTy" alt="meme" class="mx-auto" />
-    </main>
+    <div className="App">
+      <input type="text" onChange={changeHandler}></input>
+    </div>
   );
 }
 
